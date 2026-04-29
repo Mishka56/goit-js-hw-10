@@ -8,6 +8,7 @@ let userSelectedDate = null;
 
 const getInput = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector("button");
+startBtn.classList.add("start-btn");
 startBtn.disabled = true;
 flatpickr("#datetime-picker", {
   enableTime: true,
@@ -23,8 +24,17 @@ flatpickr("#datetime-picker", {
       iziToast.show({
         message: "Please choose a date in the future",
         position: 'topRight',
-        color: 'red',
-        messageColor: 'white'
+        messageSize: '16px',
+        backgroundColor: '#ef4040',
+        iconColor: '#ffffff',
+        theme: 'dark',
+        displayMode: 2,
+        close: true,
+        closeOnEscape: true,
+        pauseOnHover: false,
+        layout: 6,
+        messageColor: '#ffffff',
+        timeout: 5000,
 });
   
       startBtn.disabled = true;
@@ -43,7 +53,7 @@ let timerId = null;
 startBtn.addEventListener("click", () => {
   startBtn.disabled = true;
   getInput.disabled = true;
-
+  getInput.style.color = "grey"
   timerId = setInterval(() => {
     const currentTime = Date.now();
     const ms = userSelectedDate - currentTime;
@@ -52,6 +62,7 @@ startBtn.addEventListener("click", () => {
       clearInterval(timerId);
       getInput.disabled = false;
       startBtn.disabled = false;
+      getInput.style.color = "#000000";
       return
     }
     const timeData = convertMs(ms);
