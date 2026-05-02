@@ -65,8 +65,8 @@ startBtn.addEventListener("click", () => {
     if (ms <= 0) {
       clearInterval(timerId);
       getInput.disabled = false;
-
       getInput.style.color = "#000000";
+      updateTimerInterface({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       return
     }
     const timeData = convertMs(ms);

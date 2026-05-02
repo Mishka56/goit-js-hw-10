@@ -63,5 +63,9 @@ const handleInput = (event) => {
 	getForm.reset();	
 };
 
-getForm.addEventListener("submit", handleInput);
+if (getForm) {
+  getForm.addEventListener("submit", handleInput);
+      
+}
+
 
