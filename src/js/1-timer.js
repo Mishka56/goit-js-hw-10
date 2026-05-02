@@ -61,7 +61,7 @@ startBtn.addEventListener("click", () => {
     if (ms <= 0) {
       clearInterval(timerId);
       getInput.disabled = false;
-      startBtn.disabled = false;
+
       getInput.style.color = "#000000";
       return
     }
