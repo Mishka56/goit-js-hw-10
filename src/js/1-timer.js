@@ -4,6 +4,10 @@ import flatpickr from "flatpickr";
 // Додатковий імпорт стилів
 import "flatpickr/dist/flatpickr.min.css";
 
+import iziToast from "izitoast";
+
+import "izitoast/dist/css/iziToast.min.css";
+
 let userSelectedDate = null;
 
 const getInput = document.querySelector('#datetime-picker');
@@ -102,6 +106,3 @@ function updateTimerInterface({ days, hours, minutes, seconds }) {
 }
 
 
-import iziToast from "izitoast";
-
-import "izitoast/dist/css/iziToast.min.css";
